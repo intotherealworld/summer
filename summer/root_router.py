@@ -29,3 +29,8 @@ def respond_root(request: Request):
 @root_router.get('/favicon.ico', include_in_schema=False)
 def respond_favicon():
     return FileResponse(f'{os.path.dirname(os.path.realpath(__file__))}/static/favicon.ico')
+
+
+@root_router.get('/hc', include_in_schema=False)
+def respond_health_check():
+    return DefaultResponse(status='ok')
