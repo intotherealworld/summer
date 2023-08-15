@@ -15,6 +15,11 @@ Summer에는 몇가지 유용한 모듈을 포함하고 있습니다.
 > pip install -r requirements.txt
 > python local_server.py
 ```
+Docker
+```commandline
+> docker build -t summer -f ./deploymemt/Dockerfile .
+> docker run -p 5000:5000 --name summer summer
+```
 
 ## 모듈
 ### RouterScanner
