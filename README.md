@@ -15,6 +15,11 @@ Summer provides several helping modules.
 > pip install -r requirements.txt
 > python local_server.py
 ```
+### Docker
+```commandline
+> docker build -t summer -f ./deploymemt/Dockerfile .
+> docker run -p 5000:5000 --name summer summer
+```
 
 ## Modules
 

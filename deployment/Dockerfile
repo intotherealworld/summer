@@ -14,10 +14,7 @@ RUN pip install gunicorn
 RUN rm /requirements.txt
 
 COPY ./${SUMMER_PROJECT_NAME} /app/${SUMMER_PROJECT_NAME}
-COPY ./deployment/run.sh /app/run.sh
-
-RUN chmod +x /app/run.sh
 
 WORKDIR /app
 
-ENTRYPOINT ["/app/run.sh"]
+ENTRYPOINT gunicorn -b :5000 -w "${SUMMER_WORKERS}" --worker-class uvicorn.workers.UvicornWorker --access-logfile - --access-logformat '%(h)s %(l)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"' "${SUMMER_PROJECT_NAME}:create_app()" --timeout 20
