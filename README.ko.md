@@ -22,6 +22,7 @@ Summer에서는 [summer-toolkit](https://github.com/intotherealworld/summer-tool
 > git clone https://github.com/intotherealworld/summer.git
 > mv summer your_project_name
 > cd your_project_name
+> rm -rf .git
 > mv summer your_project_name
 ```
 

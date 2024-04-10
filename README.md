@@ -21,6 +21,7 @@ Summer uses several helping modules in summer-toolkit(https://github.com/intothe
 > git clone https://github.com/intotherealworld/summer.git
 > mv summer your_project_name
 > cd your_project_name
+> rm -rf .git
 > mv summer your_project_name
 ```
 
