@@ -1,9 +1,10 @@
 summer:
-  project-name: "summer"
+#
+  project-name: "your_project_name"
   docs:
-    title: summer
-    description: Project Template for FastAPI based project
-    version: "0.0.1"
+    title: "your_project_name"
+    description: "your_project_description"
+    version: "your_project_version"
   logger:
     version: 1
     formatters:

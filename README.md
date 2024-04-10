@@ -2,11 +2,10 @@
 
 This is a project template for a project based on FastAPI.
 
-Summer provides several helping modules.
+Summer use several helping modules in summer-toolkit(https://github.com/intotherealworld/summer-toolkit).
 - RouterScanner: scan and include APIRouters which comply with the naming rule automatically
 - SimpleJinja2Templates: find the template's absolute path with just a template directory name
 - Environment: properties and phase management module. It can manage properties each deployment phase separately
-- local_server.py: uvicorn launcher
 
 ## Usage
 ```
@@ -15,13 +14,41 @@ Summer provides several helping modules.
 > pip install -r requirements.txt
 > python local_server.py
 ```
+### How to apply your project name
+
+#### 1. change directory name
+```
+> git clone https://github.com/intotherealworld/summer.git
+> mv summer your_project_name
+> cd your_project_name
+> mv summer your_project_name
+```
+
+#### 2. change project name in Dockerfile
+```dockerfile
+# change "summer" to your project name
+ARG SUMMER_PROJECT_NAME="summer"
+```
+
+#### 3. apply your project metadata to properties.yml
+```yaml
+# do not change this key "summer".
+# just change the series of "your_" below.
+summer:
+  project-name: "your_project_name"
+  docs:
+    title: "your_project_name"
+    description: "your_project_description"
+    version: "your_project_version"
+```
+
 ### Docker
 ```commandline
 > docker build -t summer -f ./deploymemt/Dockerfile .
 > docker run -p 5000:5000 --name summer summer
 ```
 
-## Modules
+## Modules (in summer-toolkit)
 
 ### RouterScanner
 filename pattern:
@@ -66,7 +93,3 @@ SUMMER_DEPLOYMENT_PHASE=your_phase
 properties-your_phase.yml
 ```
 If there are no environment variable named 'SUMMER_DEPLOYMENT_PHASE', only the properties.yml is used. The default properties are merged with the phase properties. A phase property which has the same name with a default property overrides it.
-
-### local_server.py
-This is the helper to launch the uvicorn.
-> python local_server.py
