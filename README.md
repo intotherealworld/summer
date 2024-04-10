@@ -2,7 +2,7 @@
 
 This is a project template for a project based on FastAPI.
 
-Summer use several helping modules in summer-toolkit(https://github.com/intotherealworld/summer-toolkit).
+Summer uses several helping modules in summer-toolkit(https://github.com/intotherealworld/summer-toolkit).
 - RouterScanner: scan and include APIRouters which comply with the naming rule automatically
 - SimpleJinja2Templates: find the template's absolute path with just a template directory name
 - Environment: properties and phase management module. It can manage properties each deployment phase separately
