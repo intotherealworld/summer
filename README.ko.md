@@ -2,11 +2,10 @@
 
 FastAPI 기반 프로젝트를 빠르게 구성할 수 있는 템플릿입니다.
 
-Summer에는 몇가지 유용한 모듈을 포함하고 있습니다.
+Summer에서는 [summer-toolkit](https://github.com/intotherealworld/summer-toolkit)에 있는 몇가지 유용한 모듈을 사용합니다.
 - RouterScanner: APIRouter를 포함한 파일을 정해진 규칙으로 생성하면, 자동으로 등록해 줍니다. 
 - SimpleJinja2Templates: Jinja2Templates를 사용할 때 템플릿의 절대 경로를 지정해 줘야 하는데, 이 모듈은 템플릿 디렉토리 이름만 지정하면 자동으로 절대경로를 찾아 설정해 줍니다.
 - Environment: 속성 파일과 배포 단계를 관리하는 유틸리티 클래스입니다. 배포 단계별로 나누어서 속성을 관리할 수 있습니다.
-- local_server.py: 로컬에서 uvicorn을 실행시켜주는 유틸리티입니다.
 
 ## 사용 방법
 ```
@@ -15,13 +14,42 @@ Summer에는 몇가지 유용한 모듈을 포함하고 있습니다.
 > pip install -r requirements.txt
 > python local_server.py
 ```
+
+### 자신의 프로젝트 이름 적용 방법
+
+#### 1. 디렉토리 이름 변경
+```
+> git clone https://github.com/intotherealworld/summer.git
+> mv summer your_project_name
+> cd your_project_name
+> mv summer your_project_name
+```
+
+#### 2. Dockerfile에 있는 프로젝트 이름 변경
+```dockerfile
+# change "summer" to your project name
+ARG SUMMER_PROJECT_NAME="summer"
+```
+
+#### 3. properties.yml에 프로젝트 관련 정보 적용
+```yaml
+# do not change this key "summer".
+# just change the series of "your_" below.
+summer:
+  project-name: "your_project_name"
+  docs:
+    title: "your_project_name"
+    description: "your_project_description"
+    version: "your_project_version"
+```
+
 Docker
 ```commandline
 > docker build -t summer -f ./deploymemt/Dockerfile .
 > docker run -p 5000:5000 --name summer summer
 ```
 
-## 모듈
+## 모듈 (in summer-toolkit)
 ### RouterScanner
 파일이름 규칙:
 ```

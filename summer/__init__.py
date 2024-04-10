@@ -4,8 +4,8 @@ import os.path
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from summer.framework.router_scanner import RouterScanner
-from summer.utility.environment import Environment
+from summer_toolkit.framework.router_scanner import RouterScanner
+from summer_toolkit.utility.environment import Environment
 
 
 def create_app():

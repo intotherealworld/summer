@@ -4,7 +4,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from summer.framework.simple_jinja2_templates import SimpleJinja2Templates
+from summer_toolkit.framework.simple_jinja2_templates import SimpleJinja2Templates
 
 root_router = APIRouter(tags=['root'])
 templates = SimpleJinja2Templates()
